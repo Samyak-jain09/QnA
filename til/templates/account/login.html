@@ -1,0 +1,36 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<h1 class="text-xl font-semibold"><strong>{% trans "Welcome Back" %}</strong></h1>
+
+{% get_providers as socialaccount_providers %}
+
+
+<p class="font-normal">{% blocktrans %}If you have not created an account yet, then please
+<a href="{{ signup_url }}"><strong>sign up</strong></a> first.{% endblocktrans %}</p>
+
+<br>
+<form class="login text-gray-700" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <br>
+  <a class="button secondaryAction  text-gray-700 cursor-pointer hover:text-black" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+  
+  <button type="submit" class="primaryAction w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+    {% trans "Sign In" %}
+  </button>
+</form>
+
+
+
+
+{% endblock %}
