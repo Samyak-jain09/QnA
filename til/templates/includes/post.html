@@ -16,7 +16,7 @@
         <img src="{{ imag.url }}" width="{{ imag.width }}" height="{{ imag.height }}">
         {% endthumbnail %}
     </div>
-    <div class="flex justify-between items-center mt-4">
+    <div class="flex justify-between items-center mt-4 mb-4">
         {% if show_detail_link %}
         <a class="text-blue-600 hover:underline" href="{% url 'feed:detail' post.id %}">
             Read more
@@ -51,6 +51,8 @@
 
 
     </div>
+    
+    <h2 class="italic underline font-mono ">Answers-</h2> <br>
     {% render_comment_list for post %}
     {% if user.is_authenticated %}
     {% get_comment_form for post as form %}
@@ -80,6 +82,7 @@
         </form>
     </div>
     {% endif %}
+
 
 
 </div>

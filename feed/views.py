@@ -2,6 +2,8 @@ from django.views.generic import DetailView, TemplateView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import redirect
 
 from followers.models import Follower
 
@@ -73,3 +75,6 @@ class CreateNewPost(LoginRequiredMixin, CreateView):
             },
             content_type="application/html"
         )
+
+
+
