@@ -10,7 +10,7 @@
     </div>
     <div class="mt-2">
         <p class="mt-2 text-gray-600">{{ post.text }}</p>
-        <hr>
+        
 
         {% thumbnail post.image "200x200" crop="center" as imag %}
         <img src="{{ imag.url }}" width="{{ imag.width }}" height="{{ imag.height }}">
@@ -19,7 +19,7 @@
     <div class="flex justify-between items-center mt-4 mb-4">
         {% if show_detail_link %}
         <a class="text-blue-600 hover:underline" href="{% url 'feed:detail' post.id %}">
-            Read more
+            Show Question
         </a>
         {% else %}
         <span>&nbsp;</span>
