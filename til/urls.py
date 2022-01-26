@@ -29,5 +29,6 @@ urlpatterns = [
     path("profiles/",include(profiles_urls,namespace="profiles")),
     re_path("", include("allauth.urls")),
     re_path(r'^comments/', include('django_comments.urls')),
+    re_path(r'^search/', include('search.urls', namespace='search')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
  
