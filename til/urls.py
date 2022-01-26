@@ -28,5 +28,6 @@ urlpatterns = [
     path("",include(feed_urls,namespace="feed")),
     path("profiles/",include(profiles_urls,namespace="profiles")),
     re_path("", include("allauth.urls")),
+    re_path(r'^comments/', include('django_comments.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
  

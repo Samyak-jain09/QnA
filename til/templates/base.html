@@ -14,7 +14,7 @@
 <div class="min-h-screen flex flex-row bg-gray-100">
   <div class="flex flex-col w-56 bg-white rounded-r-3xl overflow-hidden">
     <div class="flex items-center justify-center h-20 shadow-md">
-      <h1 class="text-3xl uppercase text-indigo-500">TIL</h1>
+      <h1 class="text-3xl  text-indigo-500">QnA</h1>
     </div>
     <ul class="flex flex-col py-4">
       <li>
@@ -27,7 +27,7 @@
         <li>
             <a href="{% url 'feed:new_post' %}" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800 js-toggle-modal">
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-layer-plus"></i></span>
-            <span class="text-sm font-medium">New post</span>
+            <span class="text-sm font-medium">New question</span>
             </a>
         </li>
         <li>
@@ -59,20 +59,24 @@
     <div class="bg-white rounded-lg w-1/2">
       <div class="flex flex-col items-start p-4">
         <div class="flex items-center w-full">
-          <div class="text-gray-900 font-medium text-lg">New post</div>
+          <div class="text-gray-900 font-medium text-lg">New question</div>
       <svg class="ml-auto fill-current text-gray-700 w-6 h-6 cursor-pointer js-toggle-modal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
         <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/>
         </svg>
         </div>
         <hr>
         <div class="w-full">
-          
+          <!-- <form action="#" class="js-post-form" method="get" role="form" enctype="multipart/form-data" >
+            
+            <input name='file' class="js-post-image" data-post-url="{% url 'feed:new_post' %}" type="file" name="img" multiple>
+             
+           </form> -->
           <textarea class="border-2 border-blue-500 my-4  js-post-text w-full" placeholder= "Enter your Post" rows="3" maxlength="240" data-post-url="{% url 'feed:new_post' %}"></textarea>
         </div>
         <hr>
-        <div class="ml-auto">
+        <div class="ml-auto"> 
           <button class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-3 inline-flex items-center text-sm mt-4 js-submit" type="button">
-              <span class="mr-2">Create Post</span>
+              <span class="mr-2">Ask</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                   <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
               </svg>

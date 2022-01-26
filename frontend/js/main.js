@@ -35,6 +35,9 @@ $(document).on("click", ".js-toggle-modal", function(e) {
 .on("click", ".js-submit", function(e) {
     e.preventDefault()
     const text = $(".js-post-text").val().trim()
+    // var form_upload= $(".js-post-form")[0];
+    // var image=new FormData(form_upload);
+    
     const $btn = $(this)
 
     if(!text.length) {
@@ -46,7 +49,8 @@ $(document).on("click", ".js-toggle-modal", function(e) {
         type: 'POST',
         url: $(".js-post-text").data("post-url"),
         data: {
-            text: text
+            text: text,
+            // image: image
         },
         success: (dataHtml) => {
             $(".js-modal").addClass("hidden");

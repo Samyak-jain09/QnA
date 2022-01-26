@@ -43,7 +43,7 @@ class PostDetailView(DetailView):
 class CreateNewPost(LoginRequiredMixin, CreateView):
     model = Post
     template_name = "feed/create.html"
-    fields = ['text']
+    fields = ['text','image']
     success_url = "/"
 
     def dispatch(self, request, *args, **kwargs):
@@ -60,6 +60,7 @@ class CreateNewPost(LoginRequiredMixin, CreateView):
 
         post = Post.objects.create(
             text=request.POST.get("text"),
+            # image=request.POST.get("image"),
             author=request.user,
         )
 
