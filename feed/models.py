@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from sorl.thumbnail import ImageField
 from datetime import datetime    
 
+
 # Create your models here.
 
 class Post(models.Model):

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}QnA{% endblock %}</title>
+    <title >{% block title %}QnA{% endblock %}</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
 </head>
@@ -12,20 +12,20 @@
 
 <!-- component is from https://tailwindcomponents.com/component/sidebar-navigation -->
 <div class=" min-h-screen flex flex-row bg-gray-100">
-  <div class=" fixed h-screen flex flex-col  w-56 bg-white rounded-r-3xl overflow-hidden">
+  <div class=" bg-black fixed h-screen flex flex-col  w-56  drop-shadow-2xl  overflow-hidden">
     <div class="flex items-center justify-center h-20 shadow-md">
-      <h1 class="text-3xl  text-indigo-500">QnA</h1>
+      <h1 class="font-serif font-bold text-3xl  text-white">QnA</h1>
     </div>
-    <ul class="flex flex-col py-4">
+    <ul class=" flex flex-col py-4">
       <li>
-        <a href="/" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+        <a href="/" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-slate-400	">
           <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-home"></i></span>
           <span class="text-sm font-medium">Home</span>
         </a>
       </li>
 
       <li>
-        <a href="/search" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+        <a href="/search" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-slate-400	">
           <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-search"></i></span>
           <span class="text-sm font-medium">Search</span>
         </a>
@@ -33,28 +33,28 @@
 
       {% if request.user.is_authenticated %}
         <li>
-            <a href="{% url 'feed:new_post' %}" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800 js-toggle-modal">
+            <a href="{% url 'feed:new_post' %}" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-slate-400	 js-toggle-modal">
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-layer-plus"></i></span>
             <span class="text-sm font-medium">New question</span>
             </a>
         </li>
 
         <li>
-          <a href="/myfeed" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+          <a href="/myfeed" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-slate-400	">
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-label"></i></span>
             <span class="text-sm font-medium">My Feed</span>
           </a>
         </li>
 
         <li>
-            <a href="{% url 'account_logout' %}" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+            <a href="{% url 'account_logout' %}" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-slate-400	">
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-log-out"></i></span>
             <span class="text-sm font-medium">Logout</span>
             </a>
         </li>
       {% else %}
         <li>
-            <a href="{% url 'account_login' %}" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+            <a href="{% url 'account_login' %}" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-slate-400	">
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-log-in"></i></span>
             <span class="text-sm font-medium">Login</span>
             </a>
@@ -62,7 +62,7 @@
       {% endif %}
     </ul>
   </div>
-  <div class="ml-56 p-16">
+  <div class="ml-56 pl-2 w-full">
     {% block body %}
         {% block content %}{% endblock %}
     {% endblock %}
