@@ -10,9 +10,19 @@
     style="background-image: url(https://www.allinclusivemarketing.com/wp-content/uploads/2016/01/dark-title-background.jpg); background-size:contain;">
 
     <div class="pt-14 pl-10 text-xl text-white">
-    <h1 class="  font-bold ">Good afternoon, {{user.username}} 👋</h1>
-    <p>Ask your question and answer others</p>
+    
+        {% if request.user.is_authenticated %}
+        <h1 class="  font-bold ">Good afternoon, {{user.username}} 👋</h1>
+        <p>Ask your question and answer others</p>
+        {% else %}
+        <h1 class="  font-bold ">Good afternoon</h1>
+        <p>Login to ask your question and answer others</p>
+        {% endif %}
     </div>
+        
+    
+
+    
 
 </div>
 

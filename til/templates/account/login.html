@@ -7,6 +7,7 @@
 
 {% block content %}
 
+<div class="px-80 py-40">
 <h1 class="text-xl font-semibold"><strong>{% trans "Welcome Back" %}</strong></h1>
 
 {% get_providers as socialaccount_providers %}
@@ -25,12 +26,12 @@
   <br>
   <a class="button secondaryAction  text-gray-700 cursor-pointer hover:text-black" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   
-  <button type="submit" class="primaryAction w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+  <button type="submit" class="primaryAction w-60 py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
     {% trans "Sign In" %}
   </button>
 </form>
 
 
 
-
+</div>
 {% endblock %}
