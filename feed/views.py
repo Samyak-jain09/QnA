@@ -27,7 +27,7 @@ class MyFeed(TemplateView):
             )
             if not following:
                 # Show the default 30
-                posts = Post.objects.all().order_by('-id')[0:30]
+                posts = None
             else:
                 posts = Post.objects.filter(author__in=following).order_by('-id')[0:60]
         else:
